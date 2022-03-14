@@ -24,10 +24,12 @@ namespace Exercices.DisplayTree
                 return;
             }
 
-            SetAllBranchesFullPath(tree.Left, path + "->", branchPaths);
+            path = path + "->";
+
+            SetAllBranchesFullPath(tree.Left, path, branchPaths);
 
 
-            SetAllBranchesFullPath(tree.Right, path + "->", branchPaths);
+            SetAllBranchesFullPath(tree.Right, path, branchPaths);
         }
     }
 }
