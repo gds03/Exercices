@@ -2,18 +2,14 @@
 
 using Shouldly;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 using Xunit;
 
 namespace Exercices.Tests.DisplayTree;
 
-public class DisplayTreeServiceTests
+public class PrintRootToLeafesProcessorTests
 {
     [Fact]
-    public void DisplayEachBranch_Should_ReturnCorrectly()
+    public void PrintRootToLeafesProcessor_Print_Should_Return_Successfully()
     {
         Node<int> tree = new Node<int>();
 
@@ -35,8 +31,8 @@ public class DisplayTreeServiceTests
             Value = -3
         };
 
-        DisplayTreeService sut = new DisplayTreeService();
-        var result = sut.GetAllBranchesFullPath(tree);
+        var sut = new PrintRootToLeafesProcessor();
+        var result = sut.Print(tree);
 
         result[0].ShouldBe("5->2->10");
         result[1].ShouldBe("5->2->4");
